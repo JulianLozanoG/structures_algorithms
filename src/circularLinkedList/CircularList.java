@@ -6,11 +6,10 @@ public class CircularList {
     public static CircularList insert (CircularList list, int data) {
         Node newNode = new Node(data);
         newNode.previous = null;
-        newNode.next = null;
+        newNode.next = list.head;
 
         if (list.head == null){
             list.head = newNode;
-            list.queue = newNode;
         } else {
             Node lastNode = list.head;
             while (lastNode.next != null) {
